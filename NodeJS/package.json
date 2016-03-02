@@ -1,0 +1,22 @@
+{
+  "name": "learn-code-improve",
+  "version": "1.0.0",
+  "description": "Learning the MEAN stack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awg3/LearnCodeImprove.git"
+  },
+  "author": "Alan W. Guerrero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awg3/LearnCodeImprove/issues"
+  },
+  "homepage": "https://github.com/awg3/LearnCodeImprove#readme",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
