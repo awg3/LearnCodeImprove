@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "index.css",
+  "sources": [
+    "index.sass"
+  ],
+  "sourcesContent": [],
+  "mappings": ";CAEyB,AAAA,SAAC,AAAA,IAAY,AAAA,QAAC,AAAA,GAAW,SAAS,CAAxB;EACjC,OAAO,EAAE,eAAgB,GADS",
+  "names": []
+}
