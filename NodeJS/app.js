@@ -1,4 +1,4 @@
-'use strict'
+/* Building a web server with pure NodeJS *
 var http = require('http'),
     fs = require('fs'),
     html = "",
@@ -32,3 +32,65 @@ http.createServer(function(req, res){
         res.end();
     }
 }).listen(1337, '127.0.0.1');
+//*/
+
+/* ExpressJS, Static files and Middleware and Template Engines *
+'use strict'
+var express = require('express'),
+    app = express(),
+    port = process.env.PORT || 3000; // a working express app
+
+app.use('/public', express.static(__dirname + '/public'));
+
+app.set("view engine", "ejs");
+
+app.use("/", function(res, req, next){
+    console.log("Request URL: " + req.url);
+    next();
+});
+
+app.get('/', function(req, res){ // URL, callback function(express request, express response)
+    res.send("<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><link rel='stylesheet' href='public/style.css'/><title>Learning NodeJS</title></head><body><h1>Hello World</h1></body></html>");
+});
+
+app.get('/person/:id', function(req, res){ // URL, callback function(express request, express response)
+    //res.send(`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><link rel='stylesheet' href='public/style.css'/><title>Learning NodeJS</title></head><body><h1>Person: ${req.params.id}</h1></body></html>`);
+    res.render('person', {ID: req.params.id});
+});
+
+app.get('/api', function(req, res){
+    res.json({first: "John", last: "Doe"});
+});
+
+app.listen(port);
+//*/
+
+/* Querystring and Post parameters */
+'use strict'
+var express = require('express'),
+    app = express(),
+    port = process.env.PORT || 3000; // a working express app
+
+app.use('/public', express.static(__dirname + '/public'));
+
+app.set("view engine", "ejs");
+
+app.use("/", function(res, req, next){
+    console.log("Request URL: " + req.url);
+    next();
+});
+
+app.get('/', function(req, res){
+    res.render("index");
+});
+
+app.get('/person/:id', function(req, res){
+    res.render('person', {ID: req.params.id});
+});
+
+app.get('/api', function(req, res){
+    res.json({first: "John", last: "Doe"});
+});
+
+app.listen(port);
+//*/

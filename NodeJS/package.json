@@ -18,5 +18,9 @@
   "homepage": "https://github.com/awg3/LearnCodeImprove#readme",
   "devDependencies": {
     "jasmine-node": "^1.14.5"
+  },
+  "dependencies": {
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
   }
 }
