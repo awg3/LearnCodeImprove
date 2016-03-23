@@ -65,7 +65,7 @@ app.get('/api', function(req, res){
 app.listen(port);
 //*/
 
-/* Querystring and Post parameters */
+/* Querystring and Post parameters *
 'use strict'
 var express = require('express'),
     app = express(),
@@ -93,4 +93,27 @@ app.get('/api', function(req, res){
 });
 
 app.listen(port);
+//*/
+
+/* Testing SQL connection */
+'use strict'
+var mysql      = require('mysql'),
+    connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'awg3',
+        password: ')pE5z5t:9X9hd\Jk',
+        database : 'Localhost'
+    });
+ 
+connection.connect();
+ 
+connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
+  if (err){
+    throw err;
+  }
+ 
+  console.log('The solution is: ', rows[0].solution);
+});
+ 
+connection.end();
 //*/
