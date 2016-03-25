@@ -3,7 +3,8 @@ var express =    require('express'),
     morgan =     require('morgan'),
     config =     require('./config'),
     mongoose =   require('mongoose'),
-    app = express();
+    app =        express(),
+    api =        require('./app/routes/api')(app, express);
 
 mongoose.connect(config.database, function(err){
     if(err){
@@ -21,8 +22,14 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
+// Front end API
+app.use(express.static(__dirname + '/public'));
+
+// Middleware API
+app.use('/api', api);
+
 app.get('*', function(req, res){
-    res.sendFile(__dirname + "/public/views/index.html");
+    res.sendFile(__dirname + "/public/app/views/index.html");
 });
 
 app.listen(config.port, function(err){
@@ -30,6 +37,6 @@ app.listen(config.port, function(err){
         console.log(err);
     }
     else {
-        console.log("Listening on port + " + config.port);
+        console.log("Listening on port " + config.port);
     }
 });

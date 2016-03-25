@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    schema = mongoose.schema,
+    Schema = mongoose.Schema,
     bcrypt = require('bcrypt-nodejs'),
     UserSchema = new Schema({
         name: String,
@@ -7,6 +7,11 @@ var mongoose = require('mongoose'),
             type: String, 
             required: true,
             index: { unique: true }
+        },
+        password: {
+            type: String,
+            required: true,
+            select: false
         }
     });
 
@@ -27,9 +32,10 @@ UserSchema.pre('save', function(){
     });
 });
 
+// Compares two passwords: one typed in on the front end vs one in the database
 UserSchema.methods.comparePasswords = function(password){
     var user = this;
     return bcrypt.compareSync(password, user.password);
 }
 
-modules.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
