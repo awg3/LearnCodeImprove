@@ -15,10 +15,10 @@ var mongoose = require('mongoose'),
         }
     });
 
-UserSchema.pre('save', function(){
+UserSchema.pre('save', function(next){
     var user = this;
     
-    if(!user.identified('password')){
+    if(!user.isModified('password')){
         return next();
     }
     

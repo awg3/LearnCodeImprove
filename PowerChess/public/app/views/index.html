@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="PowerChess">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <title>PowerChess</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
-    <div ng-view></div>
+    <main class="container">
+        <div ng-view></div>
+    </main>
     
     <!-- requiring external libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
@@ -14,7 +17,7 @@
     <!-- services -->
     <script type="text/javascript" src="app/services/authService.js"></script>
     <!-- controllers -->
-    <script type="text/javascript" src="app/controllers/mainController.js"></script>
+    <script type="text/javascript" src="app/controllers/mainCtrl.js"></script>
     <!-- routes -->
     <script type="text/javascript" src="app/app.routes.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
