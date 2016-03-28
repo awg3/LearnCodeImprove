@@ -6,11 +6,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Hello world!</h1>
+    <div ng-view></div>
     
-    {{2 + 2}}
-    
+    <!-- requiring external libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+    <!-- services -->
+    <script type="text/javascript" src="app/services/authService.js"></script>
+    <!-- controllers -->
+    <script type="text/javascript" src="app/controllers/mainController.js"></script>
+    <!-- routes -->
+    <script type="text/javascript" src="app/app.routes.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
 </body>
 </html>

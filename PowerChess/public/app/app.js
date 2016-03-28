@@ -1,1 +1,1 @@
-angular.module('PowerChess', []);
+angular.module('PowerChess', ['appRoutes', 'mainCtrl', 'authService']);
