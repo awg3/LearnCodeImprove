@@ -1,6 +1,5 @@
-/* Sign Up API */
-
 var User = require("../models/users"),
+    Story = require("../models/story"),
     config = require("../../config"),
     secretKey = config.secretKey,
     jsonwebtoken = require("jsonwebtoken");
@@ -10,7 +9,9 @@ function createToken(user){
         id: user._id,
         name: user.name,
         username: user.username
-    }, secretKey, { expirationMinute: 1440});
+    }, secretKey, {
+        expirationMinute: 1440
+    });
     
     return token;
 }
@@ -44,7 +45,8 @@ module.exports = function(app, express){
         });
     });
     
-    api.post('/login', function(res, req){
+    api.post('/login', function(req, res){
+        console.log(req.body);
         User.findOne({
             username: req.body.username
         }).select('password').exec(function(err, user){
@@ -55,9 +57,14 @@ module.exports = function(app, express){
                 res.send({message: "User does not exist"});
             }
             else if(user){
-                var validPassword = user.comparePassword(req.body.password);
+                var validPassword = user.comparePasswords(req.body.password);
                 
                 if(!validPassword){
+                    res.send({
+                        message:"Invalid Password"
+                    });
+                }
+                else {
                     // Token
                     var token = createToken(user);
                     

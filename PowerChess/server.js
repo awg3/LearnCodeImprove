@@ -3,8 +3,7 @@ var express =    require('express'),
     morgan =     require('morgan'),
     config =     require('./config'),
     mongoose =   require('mongoose'),
-    app =        express(),
-    api =        require('./app/routes/api')(app, express);
+    app =        express();
 
 mongoose.connect(config.database, function(err){
     if(err){
@@ -26,6 +25,7 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 // Middleware API
+var api = require('./app/routes/api')(app, express);
 app.use('/api', api);
 
 app.get('*', function(req, res){
