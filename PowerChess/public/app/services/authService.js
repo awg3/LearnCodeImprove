@@ -28,7 +28,7 @@ angular.module('authService', [])
     
     authFactory.getUser = function(){
         if(AuthToken.getToken()){
-            return $http.get(('/api/me'));
+            return $http.get('/api/users');
         }
         else {
             return $q.reject({
@@ -70,14 +70,6 @@ angular.module('authService', [])
         }
         
         return config;
-    }
-    
-    interceptorFactory.responseError = function(response){
-        if(response.status == 403){
-            $location.path('/login');
-        }
-        
-        return $q.reject(response);
     }
     
     return interceptorFactory;

@@ -6,7 +6,7 @@ angular.module('mainCtrl', [])
     vm.loggedIn = Auth.isLoggedIn();
     
     $rootScope.$on('$routeChangeStart', function(){
-        vm.loggedIn = Auth.isLogged();
+        vm.loggedIn = Auth.isLoggedIn();
         
         Auth.getUser().then(function(data){
             vm.user = data.data;
@@ -15,7 +15,7 @@ angular.module('mainCtrl', [])
     
     vm.doLogin = function(){
         vm.processing = true;
-        vs.error = '';
+        vm.error = '';
         
         Auth.login(vm.loginData.username, vm.loginData.password)
             .success(function(data){
@@ -25,17 +25,17 @@ angular.module('mainCtrl', [])
                     vm.user = data.data;
                 });
             
-                if(data.success){
+                if(data.success){ console.log("success");
                     $location.path('/');
                 }
-                else {
-                    vs.error = data.message;
+                else { console.log("error: " + data.message);
+                    vm.error = data.message;
                 }
             });
     }
     
     vm.doLogout = function(){
         Auth.logout();
-        $location.path('/logout');
+        $location.path('/');
     }
 });
