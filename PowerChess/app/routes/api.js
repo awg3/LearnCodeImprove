@@ -16,7 +16,7 @@ function createToken(user){
     return token;
 }
 
-module.exports = function(app, express){
+module.exports = function(app, express, io){
     var api = express.Router();
     
     api.post('/signup', function(req, res){
@@ -88,11 +88,11 @@ module.exports = function(app, express){
     api.use(function(req, res, next){
         console.log("Somebody just came to our api");
         
-        var token = req.body.token || req.param('token') || req.headers['x-access-token'];
+        var token = req.body.token || req.headers['x-access-token'];
         
         // check if does not exist
         if(token){
-            jsonwebtoken.verify(token, superSecret, function(err, decoded){
+            jsonwebtoken.verify(token, secretKey, function(err, decoded){
                 if(err){
                     res.status(403).send({
                         success: false,
@@ -121,11 +121,15 @@ module.exports = function(app, express){
                 content: req.body.content
             });
             
-            story.save(function(err){
+            story.save(function(err, newStory){
                 if(err){
                     res.send(err);
                     return;
                 }
+                
+                // Rendering a new story in real time
+                io.emit('story', newStory);
+                
                 res.json({message: "New Story Created"});
             })
         })

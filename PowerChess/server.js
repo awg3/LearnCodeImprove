@@ -3,7 +3,9 @@ var express =    require('express'),
     morgan =     require('morgan'),
     config =     require('./config'),
     mongoose =   require('mongoose'),
-    app =        express();
+    app =        express(),
+    http =       require('http').Server(app),
+    io =         require('socket.io')(http);
 
 mongoose.connect(config.database, function(err){
     if(err){
@@ -25,14 +27,14 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 // Middleware API
-var api = require('./app/routes/api')(app, express);
+var api = require('./app/routes/api')(app, express, io);
 app.use('/api', api);
 
 app.get('*', function(req, res){
     res.sendFile(__dirname + "/public/app/views/index.html");
 });
 
-app.listen(config.port, function(err){
+http.listen(config.port, function(err){
     if(err){
         console.log(err);
     }
