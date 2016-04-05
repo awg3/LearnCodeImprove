@@ -33,7 +33,7 @@ UserSchema.pre('save', function(next){
 });
 
 // Compares two passwords: one typed in on the front end vs one in the database
-UserSchema.methods.comparePasswords = function(password){
+UserSchema.methods.comparePassword = function(password){
     var user = this;
     return bcrypt.compareSync(password, user.password);
 }

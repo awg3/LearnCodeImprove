@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(bodyParser.json());
+
 app.use(morgan('dev'));
 
 // Front end API

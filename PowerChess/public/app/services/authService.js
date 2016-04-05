@@ -4,6 +4,7 @@ angular.module('authService', [])
     var authFactory = {};
     
     authFactory.login = function(username, password){
+        console.log(username);
         return $http.post('/api/login', {
             username: username,
             password: password
@@ -14,6 +15,7 @@ angular.module('authService', [])
     }
     
     authFactory.logout = function(){
+        // Setting token to nothing, basically clears the value
         AuthToken.setToken();
     }
     
@@ -28,7 +30,7 @@ angular.module('authService', [])
     
     authFactory.getUser = function(){
         if(AuthToken.getToken()){
-            return $http.get('/api/users');
+            return $http.get('/api/me');
         }
         else {
             return $q.reject({
