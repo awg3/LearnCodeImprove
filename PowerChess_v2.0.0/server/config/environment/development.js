@@ -3,10 +3,13 @@
 // Development specific configuration
 // ==================================
 module.exports = {
+
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/meanApp-dev'
+    uri: 'mongodb://localhost/powerchess-dev'
   },
 
+  // Seed database on startup
   seedDB: true
+
 };

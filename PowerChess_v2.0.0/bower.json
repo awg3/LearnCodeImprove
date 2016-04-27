@@ -1,24 +1,22 @@
 {
-  "name": "PowerChess",
-  "version": "1.0.0",
+  "name": "power-chess",
+  "version": "0.0.0",
   "dependencies": {
-    "angular": "~1.4.0",
+    "angular": "~1.5.0",
     "json3": "~3.3.1",
-    "es5-shim": "~3.3.1",
-    "jquery": "~1.11.0",
+    "es5-shim": "~3.0.1",
+    "bootstrap-sass-official": "~3.1.1",
     "bootstrap": "~3.1.1",
-    "angular-resource": "~1.4.0",
-    "angular-cookies": "~1.4.0",
-    "angular-sanitize": "~1.4.0",
+    "angular-resource": "~1.5.0",
+    "angular-cookies": "~1.5.0",
+    "angular-sanitize": "~1.5.0",
     "font-awesome": ">=4.1.0",
     "lodash": "~2.4.1",
     "angular-socket-io": "~0.7.0",
     "angular-ui-router": "~0.2.15",
-    "angular-strap": "~2.3.3",
-    "angular-animate": "~1.4.7",
-    "ng-file-upload": "~9.0.9",
-    "ngInfiniteScroll": "~1.2.1",
-    "angular-moment": "~0.10.3",
-    "moment": "~2.10.6"
+    "angular-validation-match": "~1.5.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.5.0"
   }
 }
