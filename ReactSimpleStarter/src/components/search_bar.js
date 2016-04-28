@@ -24,7 +24,7 @@ class SearchBar extends Component {
     
     render(){ // must have method on every component.
         return (
-            <input
+            <input className="col-lg-8 text-left"
                 onChange={
                     event => this.setState({
                         term: event.target.value
