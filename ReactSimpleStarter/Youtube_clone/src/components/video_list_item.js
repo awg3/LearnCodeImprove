@@ -1,10 +1,12 @@
+'use strict';
+
 import React from 'react';
 
-const VideoListItem = ({video}) => { // ({video}) used to be (props), now it is the same as using: const video = props.video;
+const VideoListItem = ({video, onVideoSelect}) => { // ({video, onVideoSelect}) is the same as using: const video = props.video; and const onVideoSelect = props.onVideoSelect;
     const imageURL = video.snippet.thumbnails.default.url;
     return (
-        <li className="list-group-item">
-            <div className="video-list media">
+        <li className="list-group-item" onClick={() => onVideoSelect(video)}>
+            <div className="video-item media">
                 <div className="media-left">
                     <img className="media-object" src={imageURL}/>
                 </div>

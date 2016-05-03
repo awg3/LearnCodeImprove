@@ -1,15 +1,17 @@
+'use strict';
+
 import React from 'react';
 
 const VideoDetail = ({video}) =>{
     if(!video){
-        return <div>Loading ... </div>;
+        return <div>Loading video... </div>;
     }
     else {
         const videoId = video.id.videoId; // grabbing the video ID from the {video} object, from the App component.
         const url = `https://www.youtube.com/embed/${videoId}`; // creating a custom embed URL to be used in our iframe.
 
         return (
-            <div className="video-detail col-lg-12 text-left">
+            <div className="video-detail col-md-8">
                 <div className="embed-responsive embed-responsive-16by9">
                     <iframe className="embed-responsive-item" src={url}></iframe>
                 </div>

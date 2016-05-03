@@ -1,3 +1,5 @@
+'use strict';
+import _ from 'lodash';
 import React, {Component} from 'react'; // find the React library, which is in the project dependencies (node modules)
 import ReactDOM from 'react-dom'; // better used for rendering HTML.
 import YTSearch from 'youtube-api-search';
@@ -32,19 +34,35 @@ class App extends Component {
     constructor(props){
         super(props);
         
-        this.state = {videos: []};
+        this.state = {
+            videos: [],
+            selectedVideo: null
+        };
         
-        YTSearch({key: API_KEY, term: 'sufboards'}, (videos) => { // ES6 callback function (=>) for the youtube API.
-            this.setState({videos}); // ES6 syntax, equivalent to: this.setState({videos: videos});
+        this.videoSearch('surfboards');
+    }
+    
+    videoSearch(searchTerm){ // performs a youtube search
+        YTSearch({key: API_KEY, term: searchTerm}, (videos) => { // ES6 callback function (=>) for the youtube API.
+            this.setState({
+                videos: videos,
+                selectedVideo: videos[0]
+            });
         });
     }
+    
     render(){ // passing the list of videos via a JSX props, which arrives to VideoList as an array of videos inside the props object
+        const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 300); // debounce takes a callback function which returns a new function that can only be called every 300ms
+        
         return (
             <div>
-                <SearchBar />
+                <SearchBar onSearchTermChange={videoSearch} />
                 <br/>
-                <VideoDetail video={this.state.videos[0]} />
-                <VideoList videos={this.state.videos} />
+                <VideoDetail video={this.state.selectedVideo} />
+                <VideoList 
+                    onVideoSelect={selectedVideo => this.setState({selectedVideo})} // onVideoSelect is now a property of VideoList, which is equal to a call back function (selectedVideo), which in turn has the currently selected video as a parameter.
+                    videos={this.state.videos} 
+                />
             </div>
         );
     }
