@@ -1,0 +1,6 @@
+.list-group li:hover, .list-group li:focus {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.25s;
+}
