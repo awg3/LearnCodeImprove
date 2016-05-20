@@ -1,4 +1,4 @@
-# ReduxSimpleStarter
+# Weather Search
 
 ### 
 
