@@ -6,31 +6,31 @@ import {fetchWeather} from '../actions/index';
 class SearchBar extends Component {
     constructor(props){
         super(props);
-        
+
         // term -> a search term.
         this.state = {term: ''};
-        
-        // binds the 'this' object to SearchBar, then bind 'this' to the instance of onInputChange/onFormSubmit which is: this.onInputChange/this.onFormSubmit respectively.
-        this.onInputChange = this.onInputChange.bind(this); 
+
+        // binds 'this' object to SearchBar, which is used by onInputChange and onFormSubmit.
+        this.onInputChange = this.onInputChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
     }
-    
+
     onInputChange(event){
         // passes the input value to the state, which gets passed onto the input text field.
         this.setState({term: event.target.value});
     }
-    
+
     onFormSubmit(event){
         // prevent submitting the page.
         event.preventDefault();
-        
-        // Fetch weather data from OpenWeatherForecast API.
+
+        // fetchWeather: an action creator, which gets the data from OpenWeatherForecast API via a promise.
         this.props.fetchWeather(this.state.term, 'us');
-        
+
         // whenever submit is clicked/pressed, it will call our action creator with the search term entered, which will set the term to '' (empty string), which will then cause our component to re-render. The input's value will be set to '' as well.
-        this.setState({term: ''}); 
+        this.setState({term: ''});
     }
-    
+
     render(){
         // whenever the input changes, we want to update the state.
         return(
@@ -49,8 +49,11 @@ class SearchBar extends Component {
     }
 }
 
+// setting up the fetchWather action creator to be connected to this container.
 function mapDispatchToProps(dispatch){
     return bindActionCreators({fetchWeather}, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar); // null is being passed instead of state, because we are not using it in this case.
+// connecting the fetchWeather action creator to this container.
+// null is being passed instead of state, because we are not using it in this case.
+export default connect(null, mapDispatchToProps)(SearchBar);
