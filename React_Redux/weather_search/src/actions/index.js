@@ -11,7 +11,7 @@ export function fetchWeather(city, country){
     const url = `${ROOT_URL}&q=${city},${country}`,
           request = axios.get(url); // axios.get returns a promise.
 
-    console.log('Request: ', request);
+    // console.log('Request: ', request);
 
     return {
         // If the payload is a promise, redux-promise stops the action entirely and
