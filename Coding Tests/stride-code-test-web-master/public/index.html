@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>SSCT - Sugar Sweets Chocolate Treats</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Catamaran' rel='stylesheet' type='text/css'>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <link rel="stylesheet" href="data/css/index.css">
+  </head>
+  <body>
+    <header>
+        <h1>
+          Sugar Sweets Chocolate Treats
+        </h1>
+    </header>
+    <div class="inventory">
+      <div class="button--view-cart mobile">
+        View Cart
+      </div>
+      <form onsubmit="event.preventDefault();" method="post">
+        <table class="font--open-sans">
+        </table>
+        <div class="button--view-cart desktop">
+          View Cart
+        </div>
+      </form>
+    </div>
+    <div class="overlay">
+      <div class="modal--cart">
+        <h2>
+          Your cart
+        </h2>
+        <div class="cart-info">
+          <div class="empty-cart-message">
+            There are no items in your cart.
+          </div>
+          <table>
+            <tr class="cart-headings">
+              <thead>
+                <td align="center">Item</td>
+                <td align="center">Price</td>
+                <td align="center">Quantity</td>
+              </thead>
+            </tr>
+          </table>
+          <div class="cart-total">
+            Total: $<span></span>
+          </div>
+        </div>
+        <div class="cart-buttons">
+          <button type="button" name="Clear" class="clear-cart">Clear</button>
+          <button type="button" name="Close" class="close-cart">Close</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="data/js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+.font--open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  font-family: 'Catamaran', sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  padding: 30px 0;
+  margin: 0;
+  line-height: 30px;
+}
+
+.inventory {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-width: 320px;
+  width: 100%;
+}
+
+.inventory table {
+  max-width: 85%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  float: left;
+}
+
+.inventory table td {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.inventory table, .inventory tr, .inventory td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.inventory table .subtitle, .inventory table .text--left-align {
+  padding-left: 10px;
+  text-align: left;
+}
+
+.inventory table .button--add-to-cart {
+  width: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.inventory table .button--add-to-cart input[type="button"] {
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+.inventory table input[type="button"]:hover,
+.inventory table input[type="button"]:focus {
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.inventory table .description {
+  padding: .5em;
+}
+
+.inventory .button--view-cart {
+  border: 1px solid black;
+  width: 100px;
+  height: 70px;
+  line-height: 72px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.inventory .button--view-cart:hover, .inventory .button--view-cart:focus {
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  background-color: black;
+}
+
+.inventory .button--view-cart.desktop {
+  float: left;
+  margin-left: 0.5em;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal--cart {
+  overflow: hidden;
+  position: fixed;
+  opacity: 1;
+  border: 1px solid black;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -20%);
+  background-color: beige;
+  min-width: 320px;
+  max-width: 700px;
+  width: 100%;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+
+.modal--cart h2 {
+  text-align: center;
+}
+
+.modal--cart .cart-info {
+  margin: 0 50px;
+}
+
+.modal--cart, .cart-info .empty-cart-message {
+  text-align: center;
+}
+
+.modal--cart .cart-info table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.modal--cart .cart-info table tr, .modal--cart .cart-info table td, .modal--cart .cart-info table thead {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.modal--cart .cart-info .empty-cart-message, .modal--cart .cart-info .cart-total {
+  margin: 20px 0;
+}
+
+.modal--cart .cart-buttons {
+  float: left;
+  margin: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 450px) {
+  header {
+    font-size: 70%;
+  }
+}
+
+@media (max-width: 767px){
+  .button--view-cart.mobile {
+    display: block;
+    float: right;
+    margin-bottom: 0.5em;
+  }
+  .button--view-cart.desktop {
+    display: none;
+  }
+  .inventory table {
+    min-width: 320px;
+    max-width: 767px;
+    width: 100%;
+  }
+  .modal--cart {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .button--view-cart.mobile {
+    display: none;
+  }
+}
