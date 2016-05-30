@@ -8,8 +8,9 @@ class SearchBar extends Component {
         super(props);
 
         // term -> a search term.
-        this.state = {term: ''};
-
+        this.state = {
+          term: null
+        };
         // binds 'this' object to SearchBar, which is used by onInputChange and onFormSubmit.
         this.onInputChange = this.onInputChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -25,10 +26,15 @@ class SearchBar extends Component {
         event.preventDefault();
 
         // fetchWeather: an action creator, which gets the data from OpenWeatherForecast API via a promise.
-        this.props.fetchWeather(this.state.term, 'us');
+        if(this.state.term != null){
+          // avoiding fetching input fields with only white spaces or null.
+          if(this.state.term.trim() != ""){
+            this.props.fetchWeather(this.state.term, 'us');
+          }
+        }
 
         // whenever submit is clicked/pressed, it will call our action creator with the search term entered, which will set the term to '' (empty string), which will then cause our component to re-render. The input's value will be set to '' as well.
-        this.setState({term: ''});
+        this.setState({term: null});
     }
 
     render(){

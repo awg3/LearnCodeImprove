@@ -1,0 +1,40 @@
+td, th {
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+td {
+  border-bottom: 1px solid #333;
+}
+
+tbody {
+  background-color: #F5F5F5;
+}
+
+td:first-of-type div {
+  height: 180px;
+  width: 180px;
+}
+
+.input-group {
+  margin: 20px 0;
+}
+
+.black-bg-white-text, .black-bg-white-text a {
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+}
+
+.black-bg-white-text a:hover, .black-bg-white-text a:focus {
+  color: white;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding: 10px;
+}
