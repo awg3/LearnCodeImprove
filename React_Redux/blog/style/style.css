@@ -1,0 +1,18 @@
+.black-bg-white-text, .black-bg-white-text a {
+  background-color: #222;
+  color: white;
+  text-decoration: none;
+}
+
+.black-bg-white-text a:hover, .black-bg-white-text a:focus {
+  color: white;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding: 10px;
+}
