@@ -16,3 +16,7 @@
   text-align: center;
   padding: 10px;
 }
+
+form a.cancel-button {
+  margin-left: 10px;
+}
