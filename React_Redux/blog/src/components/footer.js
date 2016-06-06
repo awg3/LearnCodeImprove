@@ -2,7 +2,7 @@ import React from 'react';
 
 export default (props) => {
   return(
-    <footer className="footer black-bg-white-text">
+    <footer className="text-center black-bg-white-text">
       <b><h5>
         Fork me at: &nbsp;
         <span>
