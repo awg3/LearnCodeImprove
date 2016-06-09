@@ -6,7 +6,9 @@ export default (props) => {
       <b><h5>
         Fork me at: &nbsp;
         <span>
-          <a href="https://github.com/awg3/LearnCodeImprove/tree/master/React_Redux/weather_search">Alan Guerrero</a>
+          <a href="https://github.com/awg3/LearnCodeImprove/tree/master/React_Redux/weather_search" target="_blank">
+            Alan Guerrero
+          </a>
         </span>
       </h5></b>
     </footer>
