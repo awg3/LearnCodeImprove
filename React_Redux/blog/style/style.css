@@ -35,3 +35,17 @@ form h3.form-title {
 .margin__top-bottom-30px {
   margin: 30px 0;
 }
+
+.list-group-item a, .list-group-item a {
+  color: black;
+  text-decoration: none;
+}
+
+.list-group-item:hover, .list-group-item:focus {
+  background-color: #444;
+  cursor: pointer;
+}
+
+.list-group-item:hover a, .list-group-item:focus a {
+  color: white;
+}
