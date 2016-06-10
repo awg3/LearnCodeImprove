@@ -28,7 +28,7 @@ class PostsIndex extends Component {
   render() {
     return (
       <div>
-        <div className="row">
+        <div className="row margin__top-bottom-30px">
           <div className="col-xs-6">
             <h3>Posts</h3>
           </div>
@@ -38,7 +38,7 @@ class PostsIndex extends Component {
             </Link>
           </div>
         </div>
-        <div className="posts-list">
+        <div>
           <ul className="list-group">
             {this.renderPosts()}
           </ul>

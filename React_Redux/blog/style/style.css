@@ -32,6 +32,6 @@ form h3.form-title {
   margin-bottom: 25px;
 }
 
-.posts-list {
-  margin-top: 30px;
+.margin__top-bottom-30px {
+  margin: 30px 0;
 }

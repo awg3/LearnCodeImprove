@@ -48,8 +48,10 @@ class PostsNew extends Component {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-primary">Submit</button>
-        <Link to="/" className="btn btn-danger cancel-button">Cancel</Link>
+        <div className="margin__top-bottom-30px">
+          <button type="submit" className="btn btn-primary">Submit</button>
+          <Link to="/" className="btn btn-danger cancel-button">Cancel</Link>
+        </div>
       </form>
     );
   }
