@@ -36,16 +36,26 @@ form h3.form-title {
   margin: 30px 0;
 }
 
-.list-group-item a, .list-group-item a {
+.list-group-link {
   color: black;
+}
+
+.list-group-link:link, .list-group-link:visited, .list-group-link:hover, .list-group-link:active {
   text-decoration: none;
 }
 
-.list-group-item:hover, .list-group-item:focus {
-  background-color: #444;
-  cursor: pointer;
+.list-group-item {
+  min-height: 50px;
 }
 
-.list-group-item:hover a, .list-group-item:focus a {
+.list-group-item.list-title {
+  font-weight: bold;
+  background-color: #444;
   color: white;
+}
+
+.list-group-item:not(.list-title):hover, .list-group-item:not(.list-title):focus {
+  background-color: #d3d3d3;
+  color: black;
+  cursor: pointer;
 }
