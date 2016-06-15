@@ -1,3 +1,7 @@
+# Developed by: Alan W. Guerrero
+# Total dev hours: 6
+# Contact me: awg3@njit.edu or at 917-282-3754.
+
 //
 // FrontEnd Code Challenge
 //
