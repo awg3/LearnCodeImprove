@@ -26,6 +26,7 @@ header {
 
 h3.locations-title {
   text-align: center;
+  margin-bottom: 0;
 }
 
 .locations #locations-list {
@@ -57,7 +58,7 @@ h3.locations-title {
   font-size: 13px;
   float: right;
   height: 15px;
-  margin-top: 15px;
+  margin-top: 8px;
 }
 
 #locations-list > div {
