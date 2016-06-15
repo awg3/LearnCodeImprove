@@ -1,0 +1,82 @@
+html, body {
+  min-width: 320px;
+  max-width: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #44170c;
+  color: white;
+}
+
+header {
+  min-height: 210px;
+  max-height: 100%;
+  height: 100%;
+  background: url('../images/320x480_2x.png') no-repeat;
+  background-size: cover;
+  background-size: 100%;
+}
+
+#google-map {
+  height: 150px;
+  background-color: #310601;
+  color: white;
+  text-align: center;
+  line-height: 150px;
+}
+
+h3.locations-title {
+  text-align: center;
+}
+
+.locations #locations-list {
+  padding: 0 20px;
+}
+
+#locations-list .align-left {
+  width: 52%;
+  float: left;
+  font-size: 14px;
+  line-height: 4px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}
+
+#locations-list .align-right {
+  width: 48%;
+  float: right;
+}
+
+#locations-list .align-right span {
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px;
+  background: linear-gradient(#fffcd4, #a9a188);
+  color: #44170c;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 13px;
+  float: right;
+  height: 15px;
+  margin-top: 15px;
+}
+
+#locations-list > div {
+  height: 70px;
+  border-bottom: 1px solid #37140a;
+  vertical-align: middle;
+  padding-top: 10px;
+}
+
+#locations-list > div div {
+  line-height: 16px;
+}
+
+#locations-list > .align-right div:last-child {
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+#locations-list > div:last-child {
+  border: 0;
+}
